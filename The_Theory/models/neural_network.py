@@ -28,13 +28,15 @@ class NeuralNetwork:
         self.weights_input_hidden += np.dot(X.T, hidden_delta)*learning_rate
         self.bias_hidden += np.sum(hidden_delta, axis=0, keepdims=True)*learning_rate
 
-    def train(self, X, y, epochs, learning_rate):
+    def train(self, X, y, X_val, y_val, epochs, learning_rate):
         for epoch in range(epochs):
             output = self.forward(X)
             self.backward(X, y.reshape(-1, 1), output, learning_rate)
             if epoch % 100 == 0:
                 loss = np.mean((y.reshape(-1, 1) - output) ** 2)
-                print(f"Epoch {epoch}, Loss: {loss}")
+                val_output = self.forward(X_val)
+                val_loss = np.mean((y_val.reshape(-1, 1) - val_output)**2)
+                print(f"Epoch {epoch}, Loss: {loss}, Validation Loss: {val_loss}")
     
     def predict(self, X):
         return self.forward(X)
