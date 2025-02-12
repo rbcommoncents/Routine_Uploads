@@ -1,3 +1,5 @@
 /.env
 /.venv
 /automate_git_push.py
+/commit_history.txt
+/git_push_logger.py
