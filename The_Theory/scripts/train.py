@@ -21,7 +21,7 @@ def main():
         X_test, y_test = preprocess_data(test_data)
 
         nn = NeuralNetwork(input_size=X_train.shape[1], hidden_size=5, output_size=1)
-        nn.train(X_train.to_numpy(), y_train.to_numpy(), X_val.to_numpy(), y_val.to_numpy(), epochs=1000, learning_rate=0.01)
+        nn.train(X_train.to_numpy(), y_train.to_numpy(), X_val.to_numpy(), y_val.to_numpy(), epochs=3000, learning_rate=0.01)
 
         data_2 = load_dataset(PREDICT_DATA)
         X_data_2 = preprocess_data(data_2, is_training=False)
