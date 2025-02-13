@@ -1,10 +1,1 @@
-temperature,humidity,pressure
-31,70,1014
-33,68,1012
-29,73,1013
-35,66,1011
-32,69,1014
-42,94,1010
-31,71,1014
-39,70,1010
-33,68,1012
+date,temperature,humidity,pressure,rain,next_day_temp,next_day_rain
